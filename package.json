@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "copy-index": "cp ./src/index.html ./dist/index.html",
+    "watch-tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "watch-typescript": "npx tsc --watch",
+    "serve": "cd dist && python -m http.server 8000",
+    "dev": "mkdir -p  dist && concurrently \"npm run copy-index\" \"npm run watch-tailwind\" \"npm run watch-typescript\" \"npm run serve\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": false,
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.3",
+    "tailwindcss": "^4.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  }
+}
