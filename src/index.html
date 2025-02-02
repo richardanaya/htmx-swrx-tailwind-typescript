@@ -33,18 +33,22 @@
     <div id="response" style="margin-top: 20px"></div>
     <script>
       window.addEventListener("load", () => {
+        // if the service is running, just load
         if (navigator.serviceWorker.controller) {
           const loader = document.querySelector("#loader");
           htmx.trigger(loader, "serviceWorkerActivated");
         }
+        // if the user hard reloaded forcing non service worker control, reload to force control
         navigator.serviceWorker.getRegistration().then(function (reg) {
           if (reg.active && !navigator.serviceWorker.controller) {
             window.location.reload();
           }
         });
+        // if the controller changes while we're looking at the page, reload
         navigator.serviceWorker.addEventListener("controllerchange", () => {
           window.location.reload();
         });
+        // if we've received a message from our worker that it just started, reload
         navigator.serviceWorker.addEventListener("message", (event) => {
           const { type, message } = event.data;
           if (type === "service-worker-activated") {
