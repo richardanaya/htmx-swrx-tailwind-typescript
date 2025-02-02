@@ -2,6 +2,8 @@
 
 This project is an example application demonstrating the power of using HTMX, [SWRX (service worker router)](https://github.com/richardanaya/swrx/), Rollup, and Tailwind CSS together. It showcases how these technologies can be combined to create a modern web application with dynamic content loading, service worker routing, and responsive design.
 
+[See it working here](https://richardanaya.github.io/htmx-swrx-tailwind-typescript/dist/index.html)
+
 ## Project Structure
 
 - **src/components**: Contains reusable UI components in functions that return templated HTML.
