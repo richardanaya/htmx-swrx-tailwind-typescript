@@ -1,4 +1,3 @@
-import { App } from "../../components/App";
 import { ErrorMessage } from "../../components/ErrorMessage";
 
 post("/pages/index", async (request) => {
@@ -18,18 +17,16 @@ post("/pages/index", async (request) => {
 
     // Validate that both fields are provided.
     if (!name || !email) {
-      return App(
-        ErrorMessage(
-          "Error",
-          `Missing form fields. Both "name" and "email" are required.`
-        )
+      return ErrorMessage(
+        "Error",
+        `Missing form fields. Both "name" and "email" are required.`
       )
         .setStatus(400)
         .buildResponse();
     }
 
     // Create an HTML response displaying the submitted data.
-    const r = html`
+    return html`
       <html>
         <head>
           <title>Form Submitted</title>
@@ -43,9 +40,8 @@ post("/pages/index", async (request) => {
         </body>
       </html>
     `.buildResponse();
-    return r;
   } catch (error) {
-    return App(ErrorMessage("Error", `Error processing form data`))
+    return ErrorMessage("Error", `Error processing form data`)
       .setStatus(500)
       .buildResponse();
   }

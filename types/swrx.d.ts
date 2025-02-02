@@ -32,9 +32,9 @@ declare interface Component {
   headers: Headers;
   body: BodyInit | null;
 
-  setStatus(status: number): ResponseBuilder;
-  setHeader(name: string, value: string): ResponseBuilder;
-  setBody(body: BodyInit): ResponseBuilder;
+  setStatus(status: number): Component;
+  setHeader(name: string, value: string): Component;
+  setBody(body: BodyInit): Component;
 
   buildResponse(): Response;
 }

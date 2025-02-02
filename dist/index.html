@@ -24,7 +24,7 @@
     <header>My Website</header>
     <main>
       <h1>Submit Your Information</h1>
-      <form hx-post="/pages/index" hx-target="#response" hx-swap="innerHTML">
+      <form hx-post="/pages/index" hx-target="main" hx-swap="outerHTML">
         <div>
           <label for="name">Name:</label>
           <input type="text" name="name" id="name" required />
