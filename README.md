@@ -4,9 +4,9 @@ This project is an example application demonstrating the power of using HTMX, SW
 
 ## Project Structure
 
-- **src/components**: Contains reusable UI components like `Header` and `ErrorMessage`.
-- **src/pages**: Includes route handlers for different pages, such as the form submission logic in `index/route.ts`.
-- **src**: The main entry point for the application, including the service worker setup in `sw.ts` and the main HTML structure in `index.html`.
+- **src/components**: Contains reusable UI components in functions that return templated HTML.
+- **src/pages**: Includes route handlers for different pages, and also handlers of submission of form data.
+- **src/sw.ts**: The main entry point for the application that loads the router in SWRX and the routes.
 - **dist**: The output directory for compiled assets.
 
 ## Key Technologies
@@ -19,15 +19,4 @@ This project is an example application demonstrating the power of using HTMX, SW
 ## Getting Started
 
 1. **Install Dependencies**: Ensure you have Node.js installed, then run `npm install` to install project dependencies.
-2. **Build the Project**: Use `npm run build` to compile the assets using Rollup.
-3. **Serve the Application**: You can use a local server to serve the `dist` directory and view the application in your browser.
-
-## Usage
-
-- The application demonstrates a simple form submission process using HTMX for dynamic updates.
-- The service worker, configured with SWRX, handles routing and caching for improved performance.
-- Tailwind CSS is used for styling, providing a clean and responsive design.
-
-## Conclusion
-
-This example project serves as a starting point for building modern web applications with HTMX, SWRX, Rollup, and Tailwind CSS. It highlights the capabilities of these technologies and how they can be integrated to create efficient and responsive web experiences.
+2. **Run the Project**: Use `npm run dev` to compile the assets using Rollup.
