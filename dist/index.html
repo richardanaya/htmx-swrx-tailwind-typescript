@@ -7,21 +7,16 @@
     <script src="https://unpkg.com/htmx.org@2.0.0/dist/htmx.js"></script>
     <script src="https://unpkg.com/@richardanaya/swrx@0.0.13/swrx.js"></script>
     <link href="./output.css" rel="stylesheet" />
-    <style>
-      /* Basic styling for demonstration */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 2rem;
-      }
-      #result {
-        margin-top: 1rem;
-        padding: 1rem;
-        border: 1px solid #ccc;
-      }
-    </style>
   </head>
   <body>
-    <header>My Website</header>
+  <body>
+    <header
+    style="background-color: #4CAF50; color: white; display: flex; justify-content: space-between; align-items: center; font-size: 24px; font-weight: bold; width: 100%;">
+      <div style="text-align: left;" hx-get="/pages/index" hx-target="main" hx-trigger="click" class="cursor-pointer">SWRX</div>
+      <div>
+        <div hx-get="/pages/about" hx-target="main" hx-trigger="click" hx-swap="innerHTML" class="cursor-pointer">About</div>
+      </div>
+    </header>
     <main>
       <div
         id="loader"

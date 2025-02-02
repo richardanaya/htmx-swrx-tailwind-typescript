@@ -521,9 +521,11 @@
   }
 }
 @layer utilities {
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .flex {
+    display: flex;
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
 }
 :root {
@@ -541,6 +543,8 @@ body {
   line-height: var(--leading-relaxed);
   background-color: var(--background);
   color: var(--accent);
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 h1 {
   margin-bottom: calc(var(--spacing) * 4);
@@ -923,11 +927,6 @@ dialog::backdrop {
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-leading {
   syntax: "*";
   inherits: false;
@@ -943,6 +942,11 @@ dialog::backdrop {
 @property --tw-duration {
   syntax: "*";
   inherits: false;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-space-x-reverse {
   syntax: "*";
