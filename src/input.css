@@ -1,1 +1,261 @@
 @import "tailwindcss";
+
+/* Custom color palette inspired by concrete and natural light */
+:root {
+  --background: #f7f7f7; /* Soft, neutral background */
+  --concrete: #e0e0e0; /* Subtle concrete tone */
+  --accent: #333333; /* Deep, refined accent */
+  --highlight: #ffffff; /* Crisp white for clarity */
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles */
+body {
+  @apply font-sans text-base leading-relaxed;
+  background-color: var(--background);
+  color: var(--accent);
+}
+
+/* Typography */
+
+/* Headings */
+h1 {
+  @apply text-4xl font-light tracking-wide mb-4;
+}
+h2 {
+  @apply text-3xl font-light tracking-wide mb-4;
+}
+h3 {
+  @apply text-2xl font-light tracking-wide mb-3;
+}
+h4 {
+  @apply text-xl font-light tracking-wide mb-3;
+}
+h5 {
+  @apply text-lg font-light tracking-wide mb-2;
+}
+h6 {
+  @apply text-base font-light tracking-wide mb-2;
+}
+
+/* Paragraphs */
+p {
+  @apply mb-4;
+}
+
+/* Links */
+a {
+  @apply text-sm font-medium uppercase tracking-widest transition-colors duration-300;
+  color: var(--accent);
+}
+a:hover {
+  color: var(--concrete);
+}
+
+/* Lists */
+ul,
+ol {
+  @apply list-disc pl-5 mb-4;
+}
+li {
+  @apply mb-2;
+}
+
+/* Blockquote */
+blockquote {
+  @apply border-l-4 pl-4 italic text-gray-600 my-6;
+  border-color: var(--concrete);
+}
+
+/* Horizontal Rule */
+hr {
+  @apply border-t border-gray-300 my-6;
+}
+
+/* Figures */
+figure {
+  @apply my-6;
+}
+figcaption {
+  @apply text-sm text-gray-600 mt-2;
+}
+
+/* Preformatted text and Code */
+pre {
+  @apply bg-gray-100 p-4 rounded overflow-auto my-6;
+}
+code {
+  @apply font-mono text-sm;
+}
+
+/* Description List */
+dl {
+  @apply mb-6;
+}
+dt {
+  @apply font-semibold;
+}
+dd {
+  @apply ml-4 mb-2;
+}
+
+/* Details and Summary */
+details {
+  @apply my-4 p-4 border border-gray-300 rounded;
+}
+summary {
+  @apply cursor-pointer font-semibold;
+}
+
+/* Address */
+address {
+  @apply not-italic;
+}
+
+/* Marked text */
+mark {
+  @apply bg-yellow-200;
+}
+
+/* Semantic Layout Elements */
+
+/* Header: spacious and clean */
+header {
+  @apply bg-[var(--highlight)] py-8 px-6;
+  border-bottom: 1px solid var(--concrete);
+}
+header h1 {
+  /* Overrides the global h1 if needed */
+  @apply text-4xl font-light tracking-wide;
+}
+
+/* Navigation: minimal and centered */
+nav {
+  @apply bg-[var(--highlight)] py-4;
+  border-bottom: 1px solid var(--concrete);
+}
+nav ul {
+  @apply flex justify-center space-x-6;
+}
+
+/* Main content area */
+main {
+  @apply flex-grow p-8;
+}
+
+/* Article styles: emphasis on light and balance */
+article {
+  @apply bg-[var(--highlight)] p-10 mb-10 shadow-md;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+article h2 {
+  @apply text-2xl font-light mb-4 tracking-wide border-b border-[var(--concrete)] pb-1;
+}
+article p {
+  @apply text-base leading-relaxed;
+}
+
+/* Aside: for complementary information */
+aside {
+  @apply bg-[var(--highlight)] p-6 mb-10 shadow-sm;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+aside h2 {
+  @apply text-xl font-light mb-3 tracking-wide;
+}
+
+/* Section: versatile container for content grouping */
+section {
+  @apply my-10;
+}
+
+/* Table: simple, elegant styling */
+table {
+  @apply w-full border-collapse my-6;
+}
+th,
+td {
+  @apply border border-gray-300 p-3 text-left;
+}
+th {
+  @apply bg-[var(--concrete)] font-medium;
+}
+
+/* Form Elements */
+
+/* Form container */
+form {
+  @apply bg-[var(--highlight)] p-8 shadow-md rounded-lg mb-10;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+/* Labels */
+label {
+  @apply inline-block text-sm font-medium mb-2;
+}
+
+/* Input fields, textareas, and selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  @apply w-full border border-gray-300 rounded p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  background-color: var(--highlight);
+  transition: border-color 0.3s;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+}
+
+/* Fieldset and Legend */
+fieldset {
+  @apply border border-gray-300 p-4 rounded mb-4;
+}
+legend {
+  @apply text-sm font-medium mb-2;
+}
+
+/* Checkbox and Radio Button Container */
+.form-check {
+  @apply flex items-center mb-4;
+}
+.form-check input {
+  @apply mr-2;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  @apply inline-block font-semibold py-2 px-4 rounded transition-colors duration-300;
+  background-color: var(--accent);
+  color: var(--highlight);
+  border: none;
+}
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--concrete);
+}
+
+/* Footer: reflective simplicity */
+footer {
+  @apply bg-[var(--highlight)] py-6 text-center;
+  border-top: 1px solid var(--concrete);
+}
+footer p {
+  @apply text-sm;
+}
+
+dialog {
+  @apply bg-[var(--highlight)] p-8 rounded-lg shadow-lg border border-gray-300;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Dialog backdrop (the overlay behind the dialog) */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -27,7 +27,7 @@ declare function patch(
 // define service serviceStorage
 declare const serviceStorage: Storage;
 
-declare interface ResponseBuilder {
+declare interface Component {
   status: number;
   headers: Headers;
   body: BodyInit | null;
@@ -44,4 +44,4 @@ declare interface ResponseBuilder {
 declare function html(
   strings: TemplateStringsArray,
   ...values: any[]
-): ResponseBuilder;
+): Component;

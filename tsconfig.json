@@ -1,16 +1,7 @@
 {
   "compilerOptions": {
     "typeRoots": ["./types", "./node_modules/@types"],
-    "target": "ES2017", // Modern target that browsers support.
-    "module": "ES6", // Emit ES6 modules, using native import/export syntax.
-    "outDir": "dist", // Output directory for compiled files.
-    "rootDir": "src", // Root directory for your source files.
-    "strict": true, // Enable strict type checking.
-    "esModuleInterop": true, // Improve compatibility with CommonJS modules if imported.
-    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in imports.
-    "skipLibCheck": true, // Skip checking declaration files for faster builds.
-    "declaration": false, // Optional: Generate .d.ts files for consumers.
-    "sourceMap": false // Generate source maps for debugging.
+    "target": "ES2020" // Modern target that browsers support.
   },
   "include": ["src/**/*", "types/**/*"],
   "exclude": ["node_modules", "dist"]
