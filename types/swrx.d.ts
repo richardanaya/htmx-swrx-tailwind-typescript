@@ -24,6 +24,13 @@ declare function patch(
   handler: (request: Request & { params: any }) => Promise<Response>
 ): void;
 
+declare const clients: {
+  matchAll(options: {
+    includeUncontrolled: boolean;
+    type: "window";
+  }): Promise<Window[]>;
+};
+
 // define service serviceStorage
 declare const serviceStorage: Storage;
 
