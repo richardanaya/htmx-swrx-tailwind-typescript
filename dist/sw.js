@@ -1,4 +1,4 @@
-import 'https://unpkg.com/@richardanaya/swrx@0.0.12/swrx.js';
+import 'https://unpkg.com/@richardanaya/swrx@0.0.13/swrx.js';
 
 function ErrorMessage(title, message) {
     return html `<h1>${title}</h1>
