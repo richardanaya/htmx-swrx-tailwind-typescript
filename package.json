@@ -6,22 +6,22 @@
     "copy-index": "cp ./src/index.html ./dist/index.html",
     "watch-tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
     "watch-typescript": "npx rollup -c rollup.config.mjs --watch",
+    "watch-index": "npx chokidar \"./src/index.html\" -c \"npm run copy-index\"",
     "serve": "cd dist && python -m http.server 8000",
-    "dev": "mkdir -p  dist && concurrently \"npm run copy-index\" \"npm run watch-tailwind\" \"npm run watch-typescript\" \"npm run serve\"",
+    "dev": "mkdir -p  dist && concurrently \"npm run copy-index\" \"npm run watch-tailwind\" \"npm run watch-typescript\" \"npm run serve\" \"npm run watch-index\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "private": false,
   "description": "",
-  "dependencies": {
-  },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
     "@tailwindcss/cli": "^4.0.3",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.1.2",
     "rollup": "^4.34.0",
     "tailwindcss": "^4.0.3",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "concurrently": "^9.1.2",
     "typescript": "^5.7.3"
   }
 }
